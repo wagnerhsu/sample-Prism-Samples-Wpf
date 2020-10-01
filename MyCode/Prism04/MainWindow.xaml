@@ -1,0 +1,29 @@
+﻿<Window
+    x:Class="Prism04.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Prism04"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+            <GradientStop Offset="0" Color="#FF2D6FA6" />
+            <GradientStop Offset="1" Color="#FF084D87" />
+            <GradientStop Offset="0.549" Color="#FFF0F045" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Label
+            Name="MainLabel"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Content="HELLO PRISM 4!"
+            FontSize="36"
+            FontWeight="Bold"
+            Foreground="Red" />
+    </Grid>
+</Window>

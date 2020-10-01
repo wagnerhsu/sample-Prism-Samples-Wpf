@@ -4,7 +4,7 @@
         xmlns:prism="http://prismlibrary.com/"
         Title="Shell" Height="350" Width="525">
     <DockPanel LastChildFill="True">
-        <StackPanel>
+        <StackPanel Background="AliceBlue">
             <Button Content="Activate ViewA" Click="Button_Click"/>
             <Button Content="Deactivate ViewA" Click="Button_Click_1"/>
             <Button Content="Activate ViewB" Click="Button_Click_2"/>
