@@ -1,5 +1,8 @@
 ﻿using Prism.Ioc;
+using Prism.Modularity;
 using Prism.Unity;
+using Prism02.Views;
+using PrismModule01;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,9 +10,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using Prism01.Views;
 
-namespace Prism01
+namespace Prism02
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -23,7 +25,11 @@ namespace Prism01
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            
+        }
+
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            moduleCatalog.AddModule<Prism01Module>();
         }
     }
 }

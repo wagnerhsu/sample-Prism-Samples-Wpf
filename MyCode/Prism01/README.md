@@ -1,4 +1,6 @@
-﻿## 2020-10-01
+﻿## 2020-10-04
+- ViewDiscovery: Register two regions with two views
+## 2020-10-01
 ```
 The package reference 'Prism.Unity' should not specify a version.  
 Please specify the version in 'C:\WagnerGithub\sample\Wpf\sample-Prism-Samples-Wpf\Packages.props' 

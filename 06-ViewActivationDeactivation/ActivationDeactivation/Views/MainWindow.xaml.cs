@@ -1,7 +1,7 @@
-﻿using Unity;
+﻿using Prism.Ioc;
 using Prism.Regions;
 using System.Windows;
-using Prism.Ioc;
+using Unity;
 
 namespace ActivationDeactivation.Views
 {
@@ -10,12 +10,12 @@ namespace ActivationDeactivation.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        IContainerExtension _container;
-        IRegionManager _regionManager;
-        IRegion _region;
+        private IContainerExtension _container;
+        private IRegionManager _regionManager;
+        private IRegion _region;
 
-        ViewA _viewA;
-        ViewB _viewB;
+        private ViewA _viewA;
+        private ViewB _viewB;
 
         public MainWindow(IContainerExtension container, IRegionManager regionManager)
         {
@@ -37,25 +37,25 @@ namespace ActivationDeactivation.Views
             _region.Add(_viewB);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ActivevateViewA_Click(object sender, RoutedEventArgs e)
         {
             //activate view a
             _region.Activate(_viewA);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void DeactivateViewA_Click(object sender, RoutedEventArgs e)
         {
             //deactivate view a
             _region.Deactivate(_viewA);
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void ActivateViewB_Click(object sender, RoutedEventArgs e)
         {
             //activate view b
             _region.Activate(_viewB);
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void DeactivateViewB_Click(object sender, RoutedEventArgs e)
         {
             //deactivate view b
             _region.Deactivate(_viewB);
