@@ -1,0 +1,17 @@
+<Project>
+
+  <PropertyGroup>
+    <PrismVersion>7.2.0.1422</PrismVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Prism.Core" Version="$(PrismVersion)" />
+    <PackageReference Update="Prism.Wpf" Version="$(PrismVersion)" />
+    <PackageReference Update="Prism.DryIoc" Version="$(PrismVersion)" />
+    <PackageReference Update="Prism.Unity" Version="$(PrismVersion)" />
+    <PackageReference Update="NLog.Extensions.Logging" Version="1.6.5"/>
+    <PackageReference Update="NLog" Version="4.7.5"/>
+    
+  </ItemGroup>
+
+</Project>

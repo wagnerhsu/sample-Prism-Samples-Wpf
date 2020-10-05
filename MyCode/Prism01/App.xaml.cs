@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Prism01.Views;
+using Prism.Logging;
 
 namespace Prism01
 {
@@ -23,7 +24,7 @@ namespace Prism01
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            
+            containerRegistry.Register<ILoggerFacade, CustomLogger>();
         }
     }
 }

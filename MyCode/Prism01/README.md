@@ -1,4 +1,5 @@
 ﻿## 2020-10-04
+- Use ILoggerFacade to customize log
 - ViewDiscovery: Register two regions with two views
 ## 2020-10-01
 ```

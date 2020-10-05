@@ -1,4 +1,6 @@
-﻿using Prism.Regions;
+﻿using NLog;
+using Prism.Logging;
+using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +23,11 @@ namespace Prism01.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(IRegionManager regionManager)
+        public MainWindow(IRegionManager regionManager,ILoggerFacade logger)
         {
             InitializeComponent();
+            ((CustomLogger)logger).CreateLogger(LogManager.GetCurrentClassLogger());
+            logger.Log("Test", Category.Info, Priority.None);
             regionManager.RegisterViewWithRegion("ContentRegion", typeof(ViewA));
             regionManager.RegisterViewWithRegion("TestRegion", typeof(ViewB));
         }
