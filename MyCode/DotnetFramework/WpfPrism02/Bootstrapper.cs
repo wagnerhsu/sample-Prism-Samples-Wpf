@@ -3,22 +3,18 @@ using Prism.Ioc;
 using Prism.Unity;
 using Serilog;
 using System.Windows;
-using Unity;
-using WpfPrism01.Views;
+using WpfPrism02.Views;
 using WpfPrismCommon;
 
-namespace WpfPrism01
+namespace WpfPrism02
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : PrismApplication
+    class Bootstrapper : PrismBootstrapper
     {
-        protected override Window CreateShell()
+        protected override DependencyObject CreateShell()
         {
-            var w = Container.Resolve<MainWindow>();
-            return w;
+            return Container.Resolve<MainWindow>();
         }
+
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.Register<ICustomerStore, DbCustomerStore>();
@@ -30,7 +26,7 @@ namespace WpfPrism01
             var log = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .Enrich.FromLogContext()
-                 .WriteTo.Async(c => c.File("Logs/WpfPrism01.log", rollingInterval: RollingInterval.Day,
+                 .WriteTo.Async(c => c.File("Logs/WpfPrism02.log", rollingInterval: RollingInterval.Day,
                      rollOnFileSizeLimit: true))
                  .CreateLogger();
             services.AddLogging(c =>
