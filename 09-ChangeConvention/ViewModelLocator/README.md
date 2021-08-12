@@ -1,2 +1,2 @@
 ﻿## 2020-10-04
-- Customize ViewModelLocator
+- Customize ViewModelLocator using ConfigureViewModelLocator to find ViewModel based on View

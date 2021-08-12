@@ -1,4 +1,5 @@
-﻿using Prism.Ioc;
+﻿using Microsoft.Extensions.Logging;
+using Prism.Ioc;
 using Prism.Regions;
 using System.Windows;
 using Unity;
@@ -10,6 +11,7 @@ namespace ActivationDeactivation.Views
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly ILogger<MainWindow> _logger;
         private IContainerExtension _container;
         private IRegionManager _regionManager;
         private IRegion _region;
@@ -17,9 +19,12 @@ namespace ActivationDeactivation.Views
         private ViewA _viewA;
         private ViewB _viewB;
 
-        public MainWindow(IContainerExtension container, IRegionManager regionManager)
+        public MainWindow(ILogger<MainWindow> logger,
+            IContainerExtension container,
+            IRegionManager regionManager)
         {
             InitializeComponent();
+            _logger = logger;
             _container = container;
             _regionManager = regionManager;
 
@@ -59,6 +64,16 @@ namespace ActivationDeactivation.Views
         {
             //deactivate view b
             _region.Deactivate(_viewB);
+        }
+
+        private void RegionTest_Click(object sender, RoutedEventArgs e)
+        {
+            IViewsCollection activeViews = _region.ActiveViews;
+            int i = 0;
+            foreach (var view in activeViews)
+            {
+                _logger.LogInformation(i++.ToString() + ":" + view.ToString());
+            }
         }
     }
 }
