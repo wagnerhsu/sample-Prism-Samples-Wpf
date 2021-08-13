@@ -21,6 +21,12 @@ namespace Modules
 
         }
 
+        protected override void ConfigureViewModelLocator()
+        {
+            base.ConfigureViewModelLocator();
+
+            //ViewModelLocationProvider.Register<ViewA, ViewAViewModel>();
+        }
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<ModuleA.ModuleAModule>();
