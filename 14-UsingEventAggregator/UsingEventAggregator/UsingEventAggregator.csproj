@@ -1,12 +1,21 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net50-windows</TargetFramework>
     <AssemblyName>UsingEventAggregator</AssemblyName>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" VersionOverride="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" VersionOverride="5.0.0" />
     <PackageReference Include="Prism.Unity" />
+    <PackageReference Include="Prism.Unity.Extensions" VersionOverride="8.0.62" />
+    <PackageReference Include="Serilog.Enrichers.Process" VersionOverride="2.0.2" />
+    <PackageReference Include="Serilog.Enrichers.Thread" VersionOverride="3.1.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" VersionOverride="3.0.1" />
+    <PackageReference Include="Serilog.Sinks.Async" VersionOverride="1.5.0" />
+    <PackageReference Include="Serilog.Sinks.File" VersionOverride="5.0.0" />
+ 
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ModuleA\ModuleA.csproj" />

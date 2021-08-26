@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.Windows.Controls;
+using Microsoft.Extensions.Logging;
 using UsingEventAggregator.Core;
 
 namespace ModuleA.Views
@@ -11,15 +12,18 @@ namespace ModuleA.Views
     /// </summary>
     public partial class MessageView : UserControl
     {
-        public MessageView(IEventAggregator eventAggregator)
+        private readonly ILogger<MessageView> _logger;
+
+        public MessageView(IEventAggregator eventAggregator, ILogger<MessageView> logger)
         {
+            _logger = logger;
             InitializeComponent();
-            eventAggregator.GetEvent<MessageSentEvent>().Subscribe(MessageReceived);
+            eventAggregator.GetEvent<MessageSentEvent>().Subscribe(MessageReceived, ThreadOption.PublisherThread);
         }
 
         private void MessageReceived(string obj)
         {
-            Trace.WriteLine("MessageView:" + obj);
+            _logger.LogInformation("MessageView:" + obj);
         }
     }
 }
