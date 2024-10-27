@@ -30,6 +30,9 @@ Samples that demonstrate how to use various Prism features with WPF.  If you are
  [Confirm/cancel Navigation][25] | Use the IConfirmNavigationReqest interface to confirm or cancel navigation 
  [Controlling View lifetime][26] | Automatically remove views from memory with IRegionMemberLifetime 
  [Navigation Journal][27] | Learn how to use the Navigation Journal 
+ [Dialog Service][29] | Learn how to use the Dialog Service
+ [Styling Dialog][30] | Learn how to style the dialog
+ [Using Custom Window][31] | Learn how to use a custom window
  [Interactivity - InvokeCommandAction][32] | Invoke commands in response to any event 
 
 
@@ -39,10 +42,10 @@ Samples that demonstrate how to use various Prism features with WPF.  If you are
 [4]: 04-ViewDiscovery/
 [5]: 05-ViewInjection/
 [6]: 06-ViewActivationDeactivation/
-[7]: 07-Modules%20-%20AppConfig/
-[8]: 07-Modules%20-%20Code/
-[9]: 07-Modules%20-%20Directory/
-[10]: 07-Modules%20-%20LoadManual/
+[7]: 07-Modules-AppConfig/
+[8]: 07-Modules-Code/
+[9]: 07-Modules-Directory/
+[10]: 07-Modules-LoadManual/
 [11]: 08-ViewModelLocator/
 [12]: 09-ChangeConvention/
 [13]: 10-CustomRegistrations/
@@ -60,4 +63,7 @@ Samples that demonstrate how to use various Prism features with WPF.  If you are
 [25]: 22-ConfirmCancelNavigation/
 [26]: 23-RegionMemberLifetime/
 [27]: 24-NavigationJournal/
+[29]: 26-UsingDialogService/
+[30]: 27-StylingDialog/
+[31]: 28-UsingCustomWindow/
 [32]: 29-InvokeCommandAction/
