@@ -12,6 +12,7 @@
             <Button Click="DeactivateViewA_Click" Content="Deactivate ViewA" />
             <Button Click="ActivateViewB_Click" Content="Activate ViewB" />
             <Button Click="DeactivateViewB_Click" Content="Deactivate ViewB" />
+            <Button Click="RegionTest_Click" Content="Region Test" />
         </StackPanel>
         <ContentControl
             HorizontalAlignment="Center"
