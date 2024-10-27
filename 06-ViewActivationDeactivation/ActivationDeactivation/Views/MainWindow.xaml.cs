@@ -1,8 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
-using Prism.Ioc;
-using Prism.Regions;
+﻿using Unity;
+using Prism.Navigation.Regions;
 using System.Windows;
-using Unity;
+using Prism.Ioc;
 
 namespace ActivationDeactivation.Views
 {
@@ -11,20 +10,16 @@ namespace ActivationDeactivation.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly ILogger<MainWindow> _logger;
-        private IContainerExtension _container;
-        private IRegionManager _regionManager;
-        private IRegion _region;
+        IContainerExtension _container;
+        IRegionManager _regionManager;
+        IRegion _region;
 
-        private ViewA _viewA;
-        private ViewB _viewB;
+        ViewA _viewA;
+        ViewB _viewB;
 
-        public MainWindow(ILogger<MainWindow> logger,
-            IContainerExtension container,
-            IRegionManager regionManager)
+        public MainWindow(IContainerExtension container, IRegionManager regionManager)
         {
             InitializeComponent();
-            _logger = logger;
             _container = container;
             _regionManager = regionManager;
 
@@ -42,38 +37,28 @@ namespace ActivationDeactivation.Views
             _region.Add(_viewB);
         }
 
-        private void ActivevateViewA_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             //activate view a
             _region.Activate(_viewA);
         }
 
-        private void DeactivateViewA_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //deactivate view a
             _region.Deactivate(_viewA);
         }
 
-        private void ActivateViewB_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             //activate view b
             _region.Activate(_viewB);
         }
 
-        private void DeactivateViewB_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             //deactivate view b
             _region.Deactivate(_viewB);
-        }
-
-        private void RegionTest_Click(object sender, RoutedEventArgs e)
-        {
-            IViewsCollection activeViews = _region.ActiveViews;
-            int i = 0;
-            foreach (var view in activeViews)
-            {
-                _logger.LogInformation(i++.ToString() + ":" + view.ToString());
-            }
         }
     }
 }
